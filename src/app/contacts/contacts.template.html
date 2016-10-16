@@ -1,0 +1,116 @@
+<div class="contact-us">
+    <div class="container">
+        <div class="form-group" >
+            <form #userForm="ngForm"  (ngSubmit)="onSubmit(userForm.value)">
+                <div [hidden]="formSubmit" class="site-wrapper">
+
+                    <div class="row">
+                        <div class="col-md-12 cover-container card card-block" [hidden]="formSlide != 0">
+                            <div class="">
+                                <label for="email" class="control-label cart-title">I Need  Developer</label>
+                                <input ngControl="email" id="email" class="form-control input-md"  placeholder="Here is my Email!"/>
+                                <div (click)="slideIncrement()" class="btn btn-default">Get Me A Good One!</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 cover-container card card-block"  [hidden]="formSlide != 1" >
+                          <label for="qualification">What Type of Developer?</label>
+                          <p>I Need A: </p>
+                          <radio-group ngControl="qualitification" id="qualification">
+                               <input type="radio" value="rating"> Rating<br/>
+                               <input type="radio" value="date"> Date<br/>
+                               <input type="radio" value="watches"> Watch count<br/>
+                               <input type="radio" value="comments"> Comment count<br/>
+                            </radio-group>
+                          <div (click)="slideIncrement()" class="btn btn-default">Tell Me More!</div>
+                      </div>
+                      <div class="col-md-12 cover-container card card-block" [hidden]="formSlide != 2" >
+                          <label for="skill">Developer Specialty?</label>
+                          <select class="form-control" ngControl="skill" id="skill">
+                            <option>Font End</option>
+                            <option>Back End</option>
+                            <option>Full Stack</option>
+                        </select>
+                        <div (click)="slideIncrement()" class="btn btn-default">Submit</div>
+                    </div>
+
+                    <div class="col-md-12 cover-container card card-block" [hidden]="formSlide != 3">
+                      <label for="time">Employment Level?</label>
+                      <select class="form-control" ngControl="time" id="time">
+                        <option>Full Time</option>
+                        <option>Part Time</option>
+                        <option>Project</option>
+                    </select>
+                    <div (click)="slideIncrement()" class="btn btn-default">Submit</div>
+                </div>
+
+                <div class="col-md-12 cover-container card card-block" [hidden]="formSlide != 4">
+                  <label for="company">What is Your Budget?</label>
+                  <select class="form-control" ngControl="budget" id="budget">
+                    <option>10-20/hr</option>
+                    <option>20-30/hr</option>
+                    <option>20-50/hr</option>
+                    <option>50-80/hr</option>
+                    <option>80-100/hr</option>
+                    <option>Money is No Object</option>
+                    <option>Not Sure/Raising Funds</option>
+                </select>
+                <div (click)="slideIncrement()" class="btn btn-default">Submit</div> 
+            </div>
+
+
+            <div class="col-md-12 cover-container card card-block" [hidden]="formSlide != 5">
+                <h1>What is your name Rockstar?</h1>
+                <div class="col-md-6" >
+                    <label for="firstName" class="control-label">First Name</label>
+                    <input class="form-control input-md" ngControl="firstName" id="firstName" placeholder="Rock" />
+                </div>
+                <div class="col-md-6" >
+                    <label for="lastName" class="control-label">Last Name</label>
+                    <input class="form-control input-md" ngControl="lastName" id="lastName" placeholder="Star" /> 
+                </div>
+                <br />
+                <button (click)="slideIncrement()" type="submit" class="btn btn-default">Submit</button>
+            </div>
+            
+
+
+                <!-- <div class="col-md-12" [hidden]="formSlide != 7">
+                    <label for="company" class="control-label">Company</label>
+                    <input ngControl="company" id="compmany" class="form-control input-md" />
+                    
+                </div> -->
+
+                <!--  <label for="number" class="control-label">Phone Number</label>
+                <input ngControl="number" id="number" class="form-control input-md" /> -->
+                
+                <!-- <label for="address1">Address 1</label>
+                <input ngControl="address1" id="address1" />
+
+                <label for="address2">Address 2</label>
+                <input ngControl="address2" id="address2" />.
+
+                <label for="city">City</label>
+                <input ngControl="city" id="city" />
+
+                <label for="zipFirstFive">Zip Code</label>
+                <input ngControl="zipFirstFive" id="zipFirstFive" /> -->
+                <br /> 
+
+            </div>
+        </div>
+    </form>
+
+
+
+</div>
+
+<div class="row" [hidden]="formSlide != 6">
+    <div class="col-md-12 cover-container card card-block">
+        <h2 style="text-align: center;">Thank You!</h2>
+    </div>
+</div>
+</div>
+</div>
+
+
